@@ -40,11 +40,8 @@ public class Program {
 		catch(RuntimeException e){
 			System.out.println("Unexpected error! "+ e.getMessage());
 		}
-		
-		
-		
+	
 		sc.close();
-		
 		
 	}
 

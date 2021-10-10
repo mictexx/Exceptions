@@ -60,6 +60,12 @@ public class Account {
 	}
 	
 	public void withdraw(Double amount) {
+		validateWithdraw(amount);
+		balance -= amount;
+		
+	}
+	
+	public void validateWithdraw(Double amount) {
 		
 		if (getBalance() == 0 ) {
 			//throw new IllegalArgumentException("Error in reservation: Check-out date must be after check-in date!");
@@ -70,10 +76,10 @@ public class Account {
 		}else if ( amount > getWithdrawLimit() ) {
 			//throw new IllegalArgumentException("Error in reservation: Check-out date must be after check-in date!");
 			throw new DomainExceptions("Withdraw error: The amount exceeds withdraw limit");
-		}else
-		balance -= amount;
+		}
 		
 	}
+	
 		
 		@Override
 		public String toString() {
